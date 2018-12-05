@@ -1,0 +1,9 @@
+[package]
+name = "aoc"
+version = "0.1.0"
+authors = ["Oleg Khryptul <okreptul@yahoo.com>"]
+edition = "2018"
+
+[dependencies]
+failure = "0.1"
+structopt = { version = "0.2", default-features = false }
