@@ -1,10 +1,10 @@
-mod errors;
 mod aoc2018;
+mod errors;
 
-#[macro_use] extern crate failure;
+#[macro_use]
+extern crate failure;
 
 use crate::errors::Result;
-//use failure;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -13,7 +13,7 @@ struct Opt {
     /// Advent of Code year.
     #[structopt(short = "y", long = "year", default_value = "2018")]
     year: u16,
-    /// Pattern string for the file name (rust regex).
+    /// Advent of Code day.
     #[structopt(short = "d", long = "day")]
     day: u16,
 }
@@ -23,6 +23,6 @@ fn main() -> Result<()> {
 
     match opt.year {
         2018 => aoc2018::run(opt.day),
-        _ => bail!("Unknown year {}", opt.year)
+        _ => bail!("Unknown year {}", opt.year),
     }
 }
